@@ -15,7 +15,6 @@ from app.serializers import (
 # Create your views here.
 
 class ClientsAPIView(APIView):
-    authentication_classes = [BasicAuthentication]
 
     def get(self, request, id=None):
         if id:
@@ -56,7 +55,6 @@ class ClientsAPIView(APIView):
 
 
 class ClientProjectsAPIView(APIView):
-    authentication_classes = [BasicAuthentication]
     
     def post(self, request, id=None):
         if not id:
@@ -80,7 +78,6 @@ class ClientProjectsAPIView(APIView):
 
 
 class ProjectsAPIView(APIView):
-    authentication_classes = [BasicAuthentication]
     
     def get(self, request):
         if request.user.is_authenticated:
